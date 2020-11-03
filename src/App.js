@@ -11,7 +11,7 @@ function App() {
   const classes = useStyles();
   const [activeArticle, setActiveArticle] = useState(-1);
 
-  useEffect(() => {
+  /*useEffect(() => {
     alanBtn({
       key: '83459e557b5599a1d7b8b753d81411252e956eca572e1d8b807a3e2338fdd0dc/stage',
       onCommand: ({command, articles, number}) => {
@@ -47,15 +47,21 @@ function App() {
         }
       },
     });
-  }, []);
+  }, []);*/
 
   return (
+    
     <div className="App">
      <div className={classes.logoContainer}>
       <img  src={alanLogoSrc} className={classes.alanLogo} alt="alan logo"/>
      </div>
+<<<<<<< HEAD
      <NewsCards articles={newsArticles} activeArticle={activeArticle} />
     </div>
+=======
+     <NewsCards key={activeArticle} articles={newsArticles} activeArticle={activeArticle} />
+    </div> 
+>>>>>>> 63250e106b9f91be9b26221e503aa53c60bc9b63
   );
 }
 
