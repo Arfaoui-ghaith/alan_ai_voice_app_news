@@ -54,7 +54,7 @@ function App() {
      <div className={classes.logoContainer}>
       <img  src={alanLogoSrc} className={classes.alanLogo} alt="alan logo"/>
      </div>
-     <NewsCards key={activeArticle} articles={newsArticles} activeArticle={activeArticle} />
+     <NewsCards articles={newsArticles} activeArticle={activeArticle} />
     </div>
   );
 }

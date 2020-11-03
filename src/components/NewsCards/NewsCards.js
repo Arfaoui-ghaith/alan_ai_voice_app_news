@@ -18,8 +18,8 @@ export default function NewsCards(props) {
         return (
             <Grow in>
                 <Grid className={classes.container} container alignItems="stretch" spacing={3}>
-                    {infoCards.map((infoCard) => (
-                        <Grid item xs={12} sm={6} md={4} lg={3} className={classes.infoCard}>
+                    {infoCards.map((infoCard, index) => (
+                        <Grid key={index.toString()} item xs={12} sm={6} md={4} lg={3} className={classes.infoCard}>
                             <div className={classes.card} style={{backgroundColor: infoCard.color}}>
                                 <Typography variant="h5">{infoCard.title}</Typography>
                                 { infoCard.info ? (<Typography variant="h6"><strong>{infoCard.title.split(' ')[2]}:</strong><br/> {infoCard.info}</Typography>): '' }
@@ -37,8 +37,8 @@ export default function NewsCards(props) {
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                 {
                 props.articles.map((article, i) => (
-                    <Grid key={i} item xs={12} sm={6} md={4} lg={3} style={{ display: 'flex' }}>
-                        <NewsCard key={i} i={i} article={article} activeArticle={props.activeArticle}/>
+                    <Grid key={i.toString()} item xs={12} sm={6} md={4} lg={3} style={{ display: 'flex' }}>
+                        <NewsCard key={i.toString()} i={i} article={article} activeArticle={props.activeArticle}/>
                     </Grid>
                 ))
                 }
